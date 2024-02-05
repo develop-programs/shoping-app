@@ -3,7 +3,6 @@ import React from "react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/options";
 import CheckOutFinal from "./(components)/CheckOutFinal";
-import GetTotal from "@/functions/GetTotal";
 import Link from "next/link";
 import { ChevronLeftIcon } from "lucide-react";
 import PaymentOptions from "./(components)/PaymentOptions";
@@ -14,8 +13,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import UserDetails from "./(components)/UserDetails";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+
+const UserDetails = dynamic(() => import("./(components)/UserDetails"), {
+  ssr: false,
+});
 
 export default async function page() {
   const session = await getServerSession(authOptions);

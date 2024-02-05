@@ -79,7 +79,6 @@ export default function CheckOutFinal() {
           <Button>Submit</Button>
         </CardFooter>
       </Card>
-
     </div>
   );
 }

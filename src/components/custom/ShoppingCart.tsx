@@ -1,6 +1,7 @@
 "use client";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -8,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCartIcon } from "lucide-react";
+import { ChevronLeft, ShoppingCartIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import Cart from "./Cart";
 import { useSelector } from "react-redux";
@@ -85,9 +86,17 @@ export default function ShoppingCart() {
               }).format(TotalPrice)}
             </p>
           </div>
-          <Button asChild>
-            <Link href="/checkout">Proceed to Checkout</Link>
-          </Button>
+          {TotalPrice > 0 ? (
+            <Button asChild>
+              <Link href="/checkout">Proceed to Checkout</Link>
+            </Button>
+          ) : (
+            <SheetClose asChild>
+              <Button>
+                <ChevronLeft /> Back
+              </Button>
+            </SheetClose>
+          )}
         </SheetFooter>
       </SheetContent>
     </Sheet>
