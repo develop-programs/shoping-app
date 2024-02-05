@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Apple"
+  },
+  {
+    "id": 2,
+    "name": "Samsung"
+  },
+  {
+    "id": 3,
+    "name": "Huawei"
+  },
+  {
+    "id": 4,
+    "name": "Xiaomi"
+  },
+  {
+    "id": 5,
+    "name": "OnePlus"
+  },
+  {
+    "id": 6,
+    "name": "Google"
+  },
+  {
+    "id": 7,
+    "name": "Sony"
+  },
+  {
+    "id": 8,
+    "name": "LG"
+  },
+  {
+    "id": 9,
+    "name": "Motorola"
+  },
+  {
+    "id": 10,
+    "name": "Nokia"
+  },
+  {
+    "id": 11,
+    "name": "HTC"
+  },
+  {
+    "id": 12,
+    "name": "Vivo"
+  },
+  {
+    "id": 13,
+    "name": "Oppo"
+  },
+  {
+    "id": 14,
+    "name": "Asus"
+  },
+  {
+    "id": 15,
+    "name": "realmi"
+  },
+  {
+    "id": 16,
+    "name": "Infinix"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Mobiles",
+    "path": "/Products/Mobiles?page=1"
+  },
+  {
+    "name": "Electronics",
+    "path": "/Products/Electronics?page=1"
+  },
+  {
+    "name": "Accessories",
+    "path": "/Products/Accessories?page=1"
+  },
+  {
+    "name": "Laptop",
+    "path": "/Products/Laptop?page=1"
+  },
+  {
+    "name": "Tablets",
+    "path": "/Products/Tablets?page=1"
+  },
+  {
+    "name": "Grocery",
+    "path": "/Products/Grocery?page=1"
+  },
+  {
+    "name": "Desktop Accessories",
+    "path": "/Products/Desktop Accessories?page=1"
+  },
+  {
+    "name": "Men's Wear",
+    "path": "/Products/Men's Wear?page=1"
+  },
+  {
+    "name": "Men's Watch",
+    "path": "/Products/Men's Watch?page=1"
+  },
+  {
+    "name": "Women's Wear",
+    "path": "/Products/Women's Wear?page=1"
+  },
+  {
+    "name": "Toys",
+    "path": "/Products/Toys?page=1"
+  },
+  {
+    "name": "Books",
+    "path": "/Products/Books?page=1"
+  }
+]
