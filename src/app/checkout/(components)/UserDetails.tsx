@@ -25,6 +25,13 @@ import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
+type Props = {
+  email: string | null;
+  username: string | null;
+  address: string | null;
+  phone: string | null;
+};
+
 const formSchema = z.object({
   FirstName: z.string(),
   LastName: z.string(),
@@ -37,9 +44,16 @@ const formSchema = z.object({
   postalCode: z.string(),
 });
 
-export default function UserDetails({ session }: { session: any }) {
-  const { email, username, address, phone } = session.user;
-  const split = username.split(" ");
+export default function UserDetails({
+  email,
+  username,
+  address,
+  phone,
+}: Props) {
+  const firstname = username?.split(" ").at(0);
+  const Lastname = username?.split(" ").at(1);
+
+  console.log(username);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -47,8 +61,8 @@ export default function UserDetails({ session }: { session: any }) {
     defaultValues: {
       email: email || "",
       phone: phone || "",
-      FirstName: split[0] || "",
-      LastName: split[1] || "",
+      FirstName: firstname || "",
+      LastName: Lastname || "",
       Address: address || "",
       country: "",
       state: "",

@@ -25,7 +25,7 @@ export default async function page({
     <main className="min-h-screen overflow-hidden">
       <Navbar />
       <ProductsRender data={data} />
-      <div className="fixed bottom-0 h-24 w-full flex justify-center gap-2 bg-white">
+      <div className="fixed bottom-0 h-12 w-full flex justify-center gap-2 bg-white">
         <Pagination totalPages={10} currentPage={Page} />
       </div>
     </main>

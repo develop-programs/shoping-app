@@ -2,6 +2,15 @@ import Signin from "@/components/auth/SignIn";
 import React from "react";
 import { RegisterForm } from "./(components)/RegisterForm";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign Up",
+  description: "Sign Up",
+  icons: {
+    icon: "/user.svg",
+  },
+};
 
 export default function page() {
   return (

@@ -14,7 +14,22 @@ import { AddToCart, Total } from "@/services/Redux/Reducers/Cart";
 import { AddToList } from "@/services/Redux/Reducers/wishList";
 import { toast } from "sonner";
 
-export default function ProductDetails({ data }: { data: any }) {
+type Props = {
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+  discount: number;
+  category: string;
+  rating: number;
+  id: string;
+  uuid: string;
+  model: string;
+  quantity: number;
+  brand: string;
+};
+
+export default function ProductDetails({ data }: { data: Props }) {
   const dispatch = useDispatch<AppDispatch>();
 
   const [Toggle, setToggle] = React.useState<boolean>(false);
@@ -44,7 +59,7 @@ export default function ProductDetails({ data }: { data: any }) {
     <div className="container max-w-6xl h-auto grid grid-flow-col col-span-2 gap-32 pt-12 py-12">
       <div className="col-span-1 flex justify-center items-center">
         <Image
-          src={data.image}
+          src={`${data.image}`}
           alt="image"
           width={300}
           height={300}
@@ -66,10 +81,12 @@ export default function ProductDetails({ data }: { data: any }) {
 
           <span className="text-base font-bold text-muted-foreground">
             <sub>
-              <del>₹{data.price}</del>
+              <del> {data.discount ? <>₹{data.price}</> : <></>}</del>
             </sub>
           </span>
-          <span className="text-lg font-bold">₹{data.discount}% off</span>
+          <span className="text-lg font-bold">
+            {data.discount ? <>₹{data.discount}% off</> : <></>}
+          </span>
         </div>
         <div className="flex gap-1 items-center">
           <span>₹80 for shiping fee to insure safe delivery</span>

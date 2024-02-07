@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 export default function ProductsRender(data: any) {
-  const [Range, setRange] = React.useState([3000, 100000]);
+  const [Range, setRange] = React.useState([3000, 1000000]);
   const [Brands, setBrands] = React.useState<any>([]);
   const [Rating, setRating] = React.useState<any>([]);
 
@@ -61,7 +61,7 @@ export default function ProductsRender(data: any) {
             <span className="flex gap-2">
               {Range[0]}
               <Slider
-                defaultValue={[3000, 100000]}
+                defaultValue={[3000, 1000000]}
                 max={100000}
                 step={1}
                 value={Range}
@@ -126,7 +126,7 @@ export default function ProductsRender(data: any) {
             </div>
           </div>
         </div>
-        <div className="relative flex-1 h-[84vh] flex flex-col gap-2 p-2">
+        <div className="relative flex-1 h-[85vh] flex flex-col gap-2 p-2 overflow-y-auto pb-12">
           {data.data.length > 0 ? (
             data.data
               .filter((item: any, idK: any) => {
@@ -136,7 +136,10 @@ export default function ProductsRender(data: any) {
               })
               .filter((item: any, idK: any) => {
                 if (Brands.length > 0) {
-                  return Brands.some((brand: any) => brand === item.brand);
+                  return Brands.some(
+                    (brand: any) =>
+                      brand.toLowerCase() === item.brand.toLowerCase()
+                  );
                 } else {
                   return item;
                 }
@@ -149,7 +152,7 @@ export default function ProductsRender(data: any) {
                       width={100}
                       height={100}
                       alt="not found"
-                      className="w-full h-full"
+                      className="w-full h-full aspect-16/9 object-cover rounded-lg"
                       priority={true}
                     />
                   </div>

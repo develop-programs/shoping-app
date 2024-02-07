@@ -13,14 +13,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { redirect } from "next/navigation";
-import { GithubIcon } from "lucide-react";
+import { ArrowRight, GithubIcon } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string().min(10, {
     message: "email is required",
-  }),
-  password: z.string().min(5, {
-    message: "password is required",
   }),
 });
 
@@ -28,17 +25,11 @@ export function RegisterForm() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: {},
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-  }
+  function onSubmit(values: z.infer<typeof formSchema>) {}
   return (
     <Form {...form}>
       <form
@@ -58,21 +49,8 @@ export function RegisterForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input placeholder="********" {...field} required />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <Button type="submit" size="lg">
-          Submit
+          Continue <ArrowRight size={16} />
         </Button>
         <div className="relative">
           <div className="absolute inset-0 flex items-center">

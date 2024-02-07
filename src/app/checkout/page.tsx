@@ -31,7 +31,7 @@ export default async function page() {
           </Link>
           <UserProfile />
         </div>
-        <div className="container max-w-2xl h-auto p-2 space-y-2 overflow-y-auto">
+        <div className="container max-w-3xl h-auto p-2 space-y-2 overflow-y-auto">
           <PaymentOptions />
           <Card>
             <CardContent>
@@ -41,7 +41,21 @@ export default async function page() {
                   User information for shipping and billing
                 </CardDescription>
               </CardHeader>
-              <UserDetails session={session} />
+              {session ? (
+                <UserDetails
+                  email={session.user.email}
+                  username={session.user.username}
+                  address={session.user.address}
+                  phone={session.user.phone}
+                />
+              ) : (
+                <UserDetails
+                  email={null}
+                  username={null}
+                  address={null}
+                  phone={null}
+                />
+              )}
             </CardContent>
           </Card>
         </div>

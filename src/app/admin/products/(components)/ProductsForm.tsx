@@ -133,6 +133,9 @@ export default function ProductsForm() {
               .then(() => {
                 toast.success("Product created");
                 form.reset();
+                if (file.current) {
+                  file.current.value = "";
+                }
               });
           });
         }

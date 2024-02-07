@@ -37,7 +37,7 @@ export default function RootLayout({
             <GetTotal />
           </ReduxProvider>
         </ThemeProvider>
-        <Toaster />
+        <Toaster richColors />
       </body>
     </html>
   );
