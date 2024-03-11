@@ -17,7 +17,6 @@ import Link from "next/link";
 
 export default async function UserProfile() {
   const session = await getServerSession(authOptions);
-
   function ShortName(name: string) {
     const firstLetters = name
       .split(" ")
